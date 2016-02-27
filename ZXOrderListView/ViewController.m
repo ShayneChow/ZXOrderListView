@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ZXOrderListViewController.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)goOrderListViewController {
+    ZXOrderListViewController *orderListVC = [[ZXOrderListViewController alloc] init];
+    [self.navigationController pushViewController:orderListVC animated:YES];
 }
 
 @end

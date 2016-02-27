@@ -15,6 +15,7 @@
 		F02630B91C818C5600E83B17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02630B71C818C5600E83B17 /* LaunchScreen.storyboard */; };
 		F02630C41C818C5600E83B17 /* ZXOrderListViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F02630C31C818C5600E83B17 /* ZXOrderListViewTests.m */; };
 		F02630CF1C818C5600E83B17 /* ZXOrderListViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F02630CE1C818C5600E83B17 /* ZXOrderListViewUITests.m */; };
+		F02630E21C818ED500E83B17 /* ZXOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02630E11C818ED500E83B17 /* ZXOrderListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		F02630CA1C818C5600E83B17 /* ZXOrderListViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZXOrderListViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02630CE1C818C5600E83B17 /* ZXOrderListViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXOrderListViewUITests.m; sourceTree = "<group>"; };
 		F02630D01C818C5600E83B17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F02630E01C818ED500E83B17 /* ZXOrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXOrderListViewController.h; sourceTree = "<group>"; };
+		F02630E11C818ED500E83B17 /* ZXOrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXOrderListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +104,11 @@
 		F02630A81C818C5600E83B17 /* ZXOrderListView */ = {
 			isa = PBXGroup;
 			children = (
-				F02630AC1C818C5600E83B17 /* AppDelegate.h */,
-				F02630AD1C818C5600E83B17 /* AppDelegate.m */,
+				F02630DC1C818D6700E83B17 /* ZXOrderListVIew */,
 				F02630AF1C818C5600E83B17 /* ViewController.h */,
 				F02630B01C818C5600E83B17 /* ViewController.m */,
 				F02630B21C818C5600E83B17 /* Main.storyboard */,
 				F02630B51C818C5600E83B17 /* Assets.xcassets */,
-				F02630B71C818C5600E83B17 /* LaunchScreen.storyboard */,
-				F02630BA1C818C5600E83B17 /* Info.plist */,
 				F02630A91C818C5600E83B17 /* Supporting Files */,
 			);
 			path = ZXOrderListView;
@@ -117,6 +117,10 @@
 		F02630A91C818C5600E83B17 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F02630AC1C818C5600E83B17 /* AppDelegate.h */,
+				F02630AD1C818C5600E83B17 /* AppDelegate.m */,
+				F02630B71C818C5600E83B17 /* LaunchScreen.storyboard */,
+				F02630BA1C818C5600E83B17 /* Info.plist */,
 				F02630AA1C818C5600E83B17 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +142,39 @@
 				F02630D01C818C5600E83B17 /* Info.plist */,
 			);
 			path = ZXOrderListViewUITests;
+			sourceTree = "<group>";
+		};
+		F02630DC1C818D6700E83B17 /* ZXOrderListVIew */ = {
+			isa = PBXGroup;
+			children = (
+				F02630DD1C818D6700E83B17 /* Controller */,
+				F02630DE1C818D6700E83B17 /* Model */,
+				F02630DF1C818D6700E83B17 /* View */,
+			);
+			path = ZXOrderListVIew;
+			sourceTree = "<group>";
+		};
+		F02630DD1C818D6700E83B17 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F02630E01C818ED500E83B17 /* ZXOrderListViewController.h */,
+				F02630E11C818ED500E83B17 /* ZXOrderListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F02630DE1C818D6700E83B17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F02630DF1C818D6700E83B17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +310,7 @@
 				F02630B11C818C5600E83B17 /* ViewController.m in Sources */,
 				F02630AE1C818C5600E83B17 /* AppDelegate.m in Sources */,
 				F02630AB1C818C5600E83B17 /* main.m in Sources */,
+				F02630E21C818ED500E83B17 /* ZXOrderListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
