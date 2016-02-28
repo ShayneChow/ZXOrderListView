@@ -7,6 +7,9 @@
 //
 
 #import "ZXOrderListViewController.h"
+#import "ZXOrderCell.h"
+#import "ZXOrderModel.h"
+#import "MJExtension.h"
 
 #define kSegmented_Left 20
 #define kSegmented_Top 64+5
@@ -25,14 +28,10 @@
 @end
 
 @implementation ZXOrderListViewController
-#pragma mark - 懒加载
-- (NSMutableArray *)dataSource {
-    if (!_dataSource) {
-        self.dataSource = [NSMutableArray arrayWithCapacity:1];
-    }
-    return _dataSource;
-}
 
+static NSString * const OrderCell = @"ZXOrderCell";
+
+#pragma mark - 懒加载
 - (UISegmentedControl *)segmented{
     if (!_segmented) {
         self.segmented = [[UISegmentedControl alloc]initWithItems:@[@"未支付", @"已支付", @"已取消"]];
@@ -50,8 +49,9 @@
         _listView = [[UITableView alloc] initWithFrame:CGRectMake(0, kSegmented_Top + kSegmented_Height + 5, KScreenW, KScreenH - kSegmented_Height -74) style:UITableViewStylePlain];
         _listView.delegate = self;
         _listView.dataSource = self;
+        //_listView.backgroundColor = [UIColor lightGrayColor];
         _listView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        
+        [_listView registerNib:[UINib nibWithNibName:NSStringFromClass([ZXOrderCell class]) bundle:nil] forCellReuseIdentifier:OrderCell];
         [self.view addSubview:_listView];
     }
     return _listView;
@@ -63,7 +63,7 @@
     
     self.title = @"订单列表";
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    [self loadData];
     [self segmented];
     [self listView];
 }
@@ -73,35 +73,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)loadData {
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray arrayWithCapacity:1];
+        
+        // 解析本地JSON文件获取数据，生产环境中从网络获取JSON
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"orders" ofType:@"json"];
+        NSError *error = nil;
+        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data
+                                                       options:NSJSONReadingAllowFragments
+                                                         error:&error];
+        _dataSource = [ZXOrderModel objectArrayWithKeyValuesArray:arr];
+        if (error) {
+            NSLog(@"address.json - fail: %@", error.description);
+        }
+    }
+}
+
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return _dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
-        cell.backgroundColor = [UIColor grayColor];
-        UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
-        selectedBackgroundView.backgroundColor = [UIColor whiteColor];
-        cell.selectedBackgroundView = selectedBackgroundView;
-        
-        // 左侧示意条
-        UIView *liner = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 6, 40)];
-        liner.backgroundColor = [UIColor orangeColor];
-        [selectedBackgroundView addSubview:liner];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"Label: %ld", indexPath.row];
-    
+    ZXOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:OrderCell];
+    ZXOrderModel *order = _dataSource[indexPath.row];
+    cell.order = order;
     return cell;
 }
 
 #pragma mark - delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 140.0;
+    return 150.0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [_listView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 #pragma mark - Segment M

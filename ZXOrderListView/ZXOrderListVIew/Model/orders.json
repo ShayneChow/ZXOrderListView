@@ -61,8 +61,8 @@
     "order_no": "02台",
     "order_status": "0",
     "order_goodsCount": "2",
-    "order_price": "52.55",
-  "order_time":"2016-02-27 18:55:32",
+    "order_price": "23.8",
+    "order_time":"2016-02-27 18:55:32",
     "order_goodsArray": [
             {
             "id": "101",
@@ -88,10 +88,10 @@
     "order_id": "201602270003",
     "order_type": "0",
     "order_no": "03台",
-    "order_status": "0",
+    "order_status": "2",
     "order_goodsCount": "4",
-    "order_price": "52.55",
-  "order_time":"2016-02-27 19:45:32",
+    "order_price": "33.5",
+    "order_time":"2016-02-27 19:45:32",
     "order_goodsArray": [
             {
             "id": "201",
@@ -137,7 +137,7 @@
     "order_no": "02台",
     "order_status": "0",
     "order_goodsCount": "3",
-    "order_price": "52.55",
+    "order_price": "28",
     "order_time":"2016-02-27 19:56:32",
     "order_goodsArray": [
             {
@@ -170,7 +170,7 @@
             ]
   },
   {
-    "order_id": "201602270001",
+    "order_id": "201602270241",
     "order_type": "1",
     "order_no": "002",
     "order_status": "1",

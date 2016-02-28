@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ZXOrderModel;
 
 @interface ZXOrderCell : UITableViewCell
+
+/** 订单模型 */
+@property (strong, nonatomic) ZXOrderModel *order;
 
 @end

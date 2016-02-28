@@ -28,7 +28,7 @@ typedef enum {
 @property (copy, nonatomic) NSString *orderNO;  // 与类型搭配使用,类似别名
 
 /** 订单生成时间 */
-@property (strong, nonatomic) NSDate *orderTime;
+@property (copy, nonatomic) NSString *orderTime;
 
 /** 订单中包含的商品模型数组 */
 @property (strong, nonatomic) NSMutableArray *orderGoodsArray;

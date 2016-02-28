@@ -7,6 +7,7 @@
 //
 
 #import "ZXOrderCell.h"
+#import "ZXOrderModel.h"
 
 @interface ZXOrderCell ()
 
@@ -30,6 +31,35 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setOrder:(ZXOrderModel *)order {
+    _order = order;
+    
+    if (order.orderType == TakeSeatType) {
+        // 落座就餐
+        _orderTypeNOLabel.text = [NSString stringWithFormat:@"%@", order.orderNO];
+        _orderTypeNOLabel.textColor = [UIColor purpleColor];
+    } else if (order.orderType == TakeOutType) {
+        _orderTypeNOLabel.text = [NSString stringWithFormat:@"外卖-%@", order.orderNO];
+        _orderTypeNOLabel.textColor = [UIColor brownColor];
+    }
+    
+    NSString *goodsIconUrl = [NSString new];
+    goodsIconUrl = [order.orderGoodsArray[0] valueForKey:@"icon"];
+    _orderGoodsIconVIew.image = [UIImage imageNamed:goodsIconUrl];
+    _orderIDLabel.text = order.orderID;
+    _orderTimeLabel.text = order.orderTime;
+    _orderGoodsCountLabel.text = [NSString stringWithFormat:@"%i", order.orderGoodsCount];
+    _orderPriceLabel.text = [NSString stringWithFormat:@"￥%0.2f", order.orderSalePrice];
+    
+    if (order.orderStatus == NonPayment) {
+        _orderStatusIconView.image = [UIImage imageNamed:@"unpayment"];
+    } else if (order.orderStatus == HaveBeenPaid) {
+        _orderStatusIconView.image = [UIImage imageNamed:@"havebeenpaid"];
+    } else {
+        _orderStatusIconView.image = [UIImage imageNamed:@"canceled"];
+    }
 }
 
 @end

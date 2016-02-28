@@ -18,7 +18,7 @@
              @"orderNO" : @"order_no",
              @"orderStatus" : @"order_status",
              @"orderGoodsCount" : @"order_goodsCount",
-             @"orderPrice" : @"order_price",
+             @"orderSalePrice" : @"order_price",
              @"orderGoodsArray" : @"order_goodsArray",
              @"orderTime" : @"order_time"
              };
