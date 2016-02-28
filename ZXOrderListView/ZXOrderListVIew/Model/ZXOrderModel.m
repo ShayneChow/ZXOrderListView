@@ -16,6 +16,7 @@
     return @{@"orderID" : @"order_id",
              @"orderType" : @"order_type",
              @"orderNO" : @"order_no",
+             @"orderPeopleCount" : @"order_peopleCount",
              @"orderStatus" : @"order_status",
              @"orderGoodsCount" : @"order_goodsCount",
              @"orderSalePrice" : @"order_price",

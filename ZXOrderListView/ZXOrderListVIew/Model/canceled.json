@@ -4,7 +4,7 @@
   "order_type": "0",
   "order_no": "大堂-01台",
   "order_peopleCount": "4",
-  "order_status": "0",
+  "order_status": "2",
   "order_goodsCount": "5",
   "order_price": "52.55",
   "order_time":"2016-02-27 18:45:32",
@@ -61,7 +61,7 @@
     "order_type": "0",
     "order_no": "包间1",
     "order_peopleCount": "6",
-    "order_status": "0",
+    "order_status": "2",
     "order_goodsCount": "2",
     "order_price": "23.8",
     "order_time":"2016-02-27 18:55:32",
@@ -139,7 +139,7 @@
     "order_type": "0",
     "order_no": "大堂-02台",
     "order_peopleCount": "2",
-    "order_status": "0",
+    "order_status": "2",
     "order_goodsCount": "3",
     "order_price": "28",
     "order_time":"2016-02-27 19:56:32",
@@ -178,7 +178,7 @@
     "order_type": "1",
     "order_no": "A02",
     "order_peopleCount": "",
-    "order_status": "1",
+    "order_status": "2",
     "order_goodsCount": "2",
     "order_price": "52.55",
     "order_time":"2016-02-27 20:21:12",
@@ -202,5 +202,125 @@
             "desc": "茶树菇"
             }
             ]
+  },
+  {
+  "order_id": "201602270241",
+  "order_type": "1",
+  "order_no": "A02",
+  "order_peopleCount": "",
+  "order_status": "2",
+  "order_goodsCount": "2",
+  "order_price": "52.55",
+  "order_time":"2016-02-27 20:21:12",
+  "order_goodsArray": [
+                       {
+                       "id": "401",
+                       "icon": "guess_bancai",
+                       "name": "拌菜",
+                       "originalPrice": "10",
+                       "salePrice": "5",
+                       "stock": "0",
+                       "desc": "超级大白菜"
+                       },
+                       {
+                       "id": "402",
+                       "icon": "guess_zhou",
+                       "name": "粥",
+                       "originalPrice": "20",
+                       "salePrice": "10",
+                       "stock": "50",
+                       "desc": "茶树菇"
+                       }
+                       ]
+  },
+  {
+  "order_id": "201602270241",
+  "order_type": "1",
+  "order_no": "A02",
+  "order_peopleCount": "",
+  "order_status": "2",
+  "order_goodsCount": "2",
+  "order_price": "52.55",
+  "order_time":"2016-02-27 20:21:12",
+  "order_goodsArray": [
+                       {
+                       "id": "401",
+                       "icon": "guess_bancai",
+                       "name": "拌菜",
+                       "originalPrice": "10",
+                       "salePrice": "5",
+                       "stock": "0",
+                       "desc": "超级大白菜"
+                       },
+                       {
+                       "id": "402",
+                       "icon": "guess_zhou",
+                       "name": "粥",
+                       "originalPrice": "20",
+                       "salePrice": "10",
+                       "stock": "50",
+                       "desc": "茶树菇"
+                       }
+                       ]
+  },
+  {
+  "order_id": "201602270241",
+  "order_type": "1",
+  "order_no": "A02",
+  "order_peopleCount": "",
+  "order_status": "2",
+  "order_goodsCount": "2",
+  "order_price": "52.55",
+  "order_time":"2016-02-27 20:21:12",
+  "order_goodsArray": [
+                       {
+                       "id": "401",
+                       "icon": "guess_bancai",
+                       "name": "拌菜",
+                       "originalPrice": "10",
+                       "salePrice": "5",
+                       "stock": "0",
+                       "desc": "超级大白菜"
+                       },
+                       {
+                       "id": "402",
+                       "icon": "guess_zhou",
+                       "name": "粥",
+                       "originalPrice": "20",
+                       "salePrice": "10",
+                       "stock": "50",
+                       "desc": "茶树菇"
+                       }
+                       ]
+  },
+  {
+  "order_id": "201602270241",
+  "order_type": "1",
+  "order_no": "A02",
+  "order_peopleCount": "",
+  "order_status": "2",
+  "order_goodsCount": "2",
+  "order_price": "52.55",
+  "order_time":"2016-02-27 20:21:12",
+  "order_goodsArray": [
+                       {
+                       "id": "401",
+                       "icon": "guess_bancai",
+                       "name": "拌菜",
+                       "originalPrice": "10",
+                       "salePrice": "5",
+                       "stock": "0",
+                       "desc": "超级大白菜"
+                       },
+                       {
+                       "id": "402",
+                       "icon": "guess_zhou",
+                       "name": "粥",
+                       "originalPrice": "20",
+                       "salePrice": "10",
+                       "stock": "50",
+                       "desc": "茶树菇"
+                       }
+                       ]
   }
   ]

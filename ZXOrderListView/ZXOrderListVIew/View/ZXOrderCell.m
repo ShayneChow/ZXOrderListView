@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *orderGoodsCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *orderPriceLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *orderStatusIconView;
+@property (weak, nonatomic) IBOutlet UILabel *orderPeopleCountLabel;
 
 @end
 
@@ -36,13 +37,16 @@
 - (void)setOrder:(ZXOrderModel *)order {
     _order = order;
     
+    _orderPeopleCountLabel.text = [NSString stringWithFormat:@"%i 位", order.orderPeopleCount];
     if (order.orderType == TakeSeatType) {
         // 落座就餐
         _orderTypeNOLabel.text = [NSString stringWithFormat:@"%@", order.orderNO];
-        _orderTypeNOLabel.textColor = [UIColor purpleColor];
+        _orderTypeNOLabel.textColor = [UIColor grayColor];
+        _orderPeopleCountLabel.hidden = NO;
     } else if (order.orderType == TakeOutType) {
         _orderTypeNOLabel.text = [NSString stringWithFormat:@"外卖-%@", order.orderNO];
         _orderTypeNOLabel.textColor = [UIColor brownColor];
+        _orderPeopleCountLabel.hidden = YES;
     }
     
     NSString *goodsIconUrl = [NSString new];

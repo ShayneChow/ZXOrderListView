@@ -30,6 +30,9 @@ typedef enum {
 /** 订单生成时间 */
 @property (copy, nonatomic) NSString *orderTime;
 
+/** 订单就餐人数 */
+@property (assign, nonatomic) int orderPeopleCount;
+
 /** 订单中包含的商品模型数组 */
 @property (strong, nonatomic) NSMutableArray *orderGoodsArray;
 

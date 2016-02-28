@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="470" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="470" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="470" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6H5-iC-LYF">
@@ -35,13 +35,25 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3位" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKi-YV-tYY">
+                                        <rect key="frame" x="390" y="5" width="50" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="gp1-bh-w3D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="XAj-qz-n2k" firstAttribute="leading" secondItem="uMn-W6-uQe" secondAttribute="leading" constant="5" id="6jN-OO-hM7"/>
+                                    <constraint firstAttribute="trailing" secondItem="xKi-YV-tYY" secondAttribute="trailing" constant="10" id="CyM-4j-3GE"/>
                                     <constraint firstAttribute="height" constant="30" id="Kb6-fJ-WpH"/>
                                     <constraint firstItem="XAj-qz-n2k" firstAttribute="top" secondItem="uMn-W6-uQe" secondAttribute="top" constant="5" id="M2F-bW-WKh"/>
                                     <constraint firstAttribute="trailing" secondItem="XAj-qz-n2k" secondAttribute="trailing" constant="5" id="RFh-AU-Mcr"/>
+                                    <constraint firstAttribute="bottom" secondItem="xKi-YV-tYY" secondAttribute="bottom" id="YUO-sa-In4"/>
+                                    <constraint firstItem="xKi-YV-tYY" firstAttribute="top" secondItem="uMn-W6-uQe" secondAttribute="top" constant="5" id="qqc-NW-w69"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Distance_Line" translatesAutoresizingMaskIntoConstraints="NO" id="78f-TA-dCU" userLabel="上部分割线">
@@ -182,11 +194,11 @@
                     <constraint firstItem="6H5-iC-LYF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="RY9-R5-Xaq"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="orderGoodsCountLabel" destination="C1e-Q5-1Le" id="6NF-5m-8WZ"/>
                 <outlet property="orderGoodsIconVIew" destination="ed0-DK-yY5" id="j3s-1D-goF"/>
                 <outlet property="orderIDLabel" destination="Acc-Rs-IzP" id="pk0-7a-OqF"/>
+                <outlet property="orderPeopleCountLabel" destination="xKi-YV-tYY" id="u5V-5r-OkW"/>
                 <outlet property="orderPriceLabel" destination="Vkd-4v-4Ft" id="AcS-V2-J7m"/>
                 <outlet property="orderStatusIconView" destination="xsP-h9-T75" id="cK1-Ag-JM8"/>
                 <outlet property="orderTimeLabel" destination="v7I-k2-2eI" id="uKn-YB-2mX"/>

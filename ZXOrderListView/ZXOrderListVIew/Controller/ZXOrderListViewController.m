@@ -10,6 +10,7 @@
 #import "ZXOrderCell.h"
 #import "ZXOrderModel.h"
 #import "MJExtension.h"
+#import "MJRefresh.h"
 
 #define kSegmented_Left 20
 #define kSegmented_Top 64+5
@@ -32,11 +33,18 @@
 static NSString * const OrderCell = @"ZXOrderCell";
 
 #pragma mark - 懒加载
+- (NSMutableArray *)dataSource {
+    if (!_dataSource) {
+        self.dataSource = [NSMutableArray arrayWithCapacity:1];
+    }
+    return _dataSource;
+}
+
 - (UISegmentedControl *)segmented{
     if (!_segmented) {
         self.segmented = [[UISegmentedControl alloc]initWithItems:@[@"未支付", @"已支付", @"已取消"]];
         self.segmented.frame = CGRectMake(kSegmented_Left, kSegmented_Top, kSegmented_Width, kSegmented_Height);
-        self.segmented.tintColor = [UIColor blackColor];
+        self.segmented.tintColor = [UIColor darkGrayColor];
         self.segmented.selectedSegmentIndex = 0;
         [_segmented addTarget:self action:@selector(handleSegmented:) forControlEvents:UIControlEventValueChanged];
         [self.view addSubview:_segmented];
@@ -52,6 +60,7 @@ static NSString * const OrderCell = @"ZXOrderCell";
         //_listView.backgroundColor = [UIColor lightGrayColor];
         _listView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_listView registerNib:[UINib nibWithNibName:NSStringFromClass([ZXOrderCell class]) bundle:nil] forCellReuseIdentifier:OrderCell];
+        [self RequestData:@"nonpayment"];
         [self.view addSubview:_listView];
     }
     return _listView;
@@ -63,9 +72,10 @@ static NSString * const OrderCell = @"ZXOrderCell";
     
     self.title = @"订单列表";
     self.view.backgroundColor = [UIColor whiteColor];
-    [self loadData];
+    //[self loadData];
     [self segmented];
     [self listView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,22 +83,37 @@ static NSString * const OrderCell = @"ZXOrderCell";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadData {
-    if (!_dataSource) {
-        _dataSource = [NSMutableArray arrayWithCapacity:1];
-        
-        // 解析本地JSON文件获取数据，生产环境中从网络获取JSON
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"orders" ofType:@"json"];
-        NSError *error = nil;
-        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data
-                                                       options:NSJSONReadingAllowFragments
-                                                         error:&error];
-        _dataSource = [ZXOrderModel objectArrayWithKeyValuesArray:arr];
-        if (error) {
-            NSLog(@"address.json - fail: %@", error.description);
-        }
+//下拉刷新,上拉加载
+- (void)Refreshing:(NSString *)type{
+    //上拉刷新
+    _listView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.number = 0;
+        [self RequestData:type];
+        NSLog(@"=== 点击 “%@” ", type);
+        [_listView.mj_header endRefreshing];
+    }];
+    [_listView.mj_header beginRefreshing];
+    
+}
+
+// 分类请求数据
+- (void)RequestData:(NSString *)type {
+    
+    // 解析本地JSON文件获取数据，生产环境中从网络获取JSON
+    NSString *path = [[NSBundle mainBundle] pathForResource:type ofType:@"json"];
+    NSError *error = nil;
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    NSArray *arr = [NSJSONSerialization JSONObjectWithData:data
+                                                   options:NSJSONReadingAllowFragments
+                                                     error:&error];
+
+    _dataSource = [ZXOrderModel objectArrayWithKeyValuesArray:arr];
+    if (error) {
+        NSLog(@"address.json - fail: %@", error.description);
     }
+    NSLog(@"===\n%@", _dataSource);
+    [_listView reloadData];
+
 }
 
 #pragma mark - Table view data source
@@ -117,13 +142,13 @@ static NSString * const OrderCell = @"ZXOrderCell";
     NSInteger index = segmented.selectedSegmentIndex;
     switch (index) {
         case 0:
-            [_segmented setTintColor:[UIColor blackColor]];
+            [self Refreshing:@"nonpayment"];
             break;
         case 1:
-            [_segmented setTintColor:[UIColor purpleColor]];
+            [self Refreshing:@"havebeenpaid"];
             break;
         case 2:
-            [_segmented setTintColor:[UIColor grayColor]];
+            [self Refreshing:@"canceled"];
             break;
         default:
             break;
