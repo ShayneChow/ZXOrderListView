@@ -101,7 +101,7 @@
 
 #pragma mark - delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40.0;
+    return 140.0;
 }
 
 #pragma mark - Segment M
