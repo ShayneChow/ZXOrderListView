@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0F94677C76C87CBDA68440 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDE507D479D422923A8A7C8 /* libPods.a */; };
 		F02630AB1C818C5600E83B17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F02630AA1C818C5600E83B17 /* main.m */; };
 		F02630AE1C818C5600E83B17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F02630AD1C818C5600E83B17 /* AppDelegate.m */; };
 		F02630B11C818C5600E83B17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02630B01C818C5600E83B17 /* ViewController.m */; };
@@ -53,6 +54,7 @@
 		F02631981C830FDE00E83B17 /* canceled.json in Resources */ = {isa = PBXBuildFile; fileRef = F02631951C830FDE00E83B17 /* canceled.json */; };
 		F02631991C830FDE00E83B17 /* havebeenpaid.json in Resources */ = {isa = PBXBuildFile; fileRef = F02631961C830FDE00E83B17 /* havebeenpaid.json */; };
 		F026319A1C830FDE00E83B17 /* nonpayment.json in Resources */ = {isa = PBXBuildFile; fileRef = F02631971C830FDE00E83B17 /* nonpayment.json */; };
+		F0A98DB01C8566CD00B81BD1 /* ZXOrderDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A98DAF1C8566CD00B81BD1 /* ZXOrderDetailController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D6D7896CB92FFA074D72839 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		869394F67D21414ABE36F420 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BDDE507D479D422923A8A7C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02630A61C818C5600E83B17 /* ZXOrderListView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXOrderListView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02630AA1C818C5600E83B17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F02630AC1C818C5600E83B17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -161,6 +166,8 @@
 		F02631951C830FDE00E83B17 /* canceled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = canceled.json; sourceTree = "<group>"; };
 		F02631961C830FDE00E83B17 /* havebeenpaid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = havebeenpaid.json; sourceTree = "<group>"; };
 		F02631971C830FDE00E83B17 /* nonpayment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nonpayment.json; sourceTree = "<group>"; };
+		F0A98DAE1C8566CD00B81BD1 /* ZXOrderDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXOrderDetailController.h; sourceTree = "<group>"; };
+		F0A98DAF1C8566CD00B81BD1 /* ZXOrderDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXOrderDetailController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED0F94677C76C87CBDA68440 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +196,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F7CB33EB25F9BD4E5B0456E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDDE507D479D422923A8A7C8 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4A7D41F4ABA8AFCCB854454 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				869394F67D21414ABE36F420 /* Pods.debug.xcconfig */,
+				0D6D7896CB92FFA074D72839 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F026309D1C818C5600E83B17 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +220,8 @@
 				F02630C21C818C5600E83B17 /* ZXOrderListViewTests */,
 				F02630CD1C818C5600E83B17 /* ZXOrderListViewUITests */,
 				F02630A71C818C5600E83B17 /* Products */,
+				D4A7D41F4ABA8AFCCB854454 /* Pods */,
+				7F7CB33EB25F9BD4E5B0456E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,6 +295,8 @@
 			children = (
 				F02630E01C818ED500E83B17 /* ZXOrderListViewController.h */,
 				F02630E11C818ED500E83B17 /* ZXOrderListViewController.m */,
+				F0A98DAE1C8566CD00B81BD1 /* ZXOrderDetailController.h */,
+				F0A98DAF1C8566CD00B81BD1 /* ZXOrderDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -426,9 +455,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F02630D31C818C5600E83B17 /* Build configuration list for PBXNativeTarget "ZXOrderListView" */;
 			buildPhases = (
+				349B677BFE55080E421705BE /* Check Pods Manifest.lock */,
 				F02630A21C818C5600E83B17 /* Sources */,
 				F02630A31C818C5600E83B17 /* Frameworks */,
 				F02630A41C818C5600E83B17 /* Resources */,
+				DECF8AA54392CE5C0E24001F /* Embed Pods Frameworks */,
+				74CF0C66C310F1C9F307A42C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -550,6 +582,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		349B677BFE55080E421705BE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		74CF0C66C310F1C9F307A42C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DECF8AA54392CE5C0E24001F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F02630A21C818C5600E83B17 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -576,6 +656,7 @@
 				F02631841C82FAA800E83B17 /* MJRefreshComponent.m in Sources */,
 				F02631021C81B4F400E83B17 /* MJPropertyKey.m in Sources */,
 				F02631061C81B4F400E83B17 /* NSObject+MJKeyValue.m in Sources */,
+				F0A98DB01C8566CD00B81BD1 /* ZXOrderDetailController.m in Sources */,
 				F02631831C82FAA800E83B17 /* MJRefreshBackFooter.m in Sources */,
 				F026318C1C82FAA800E83B17 /* MJRefreshBackStateFooter.m in Sources */,
 				F026318D1C82FAA800E83B17 /* MJRefreshGifHeader.m in Sources */,
@@ -726,6 +807,7 @@
 		};
 		F02630D41C818C5600E83B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 869394F67D21414ABE36F420 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZXOrderListView/Info.plist;
@@ -737,6 +819,7 @@
 		};
 		F02630D51C818C5600E83B17 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D6D7896CB92FFA074D72839 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZXOrderListView/Info.plist;
@@ -813,6 +896,7 @@
 				F02630D51C818C5600E83B17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F02630D61C818C5600E83B17 /* Build configuration list for PBXNativeTarget "ZXOrderListViewTests" */ = {
 			isa = XCConfigurationList;
@@ -821,6 +905,7 @@
 				F02630D81C818C5600E83B17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F02630D91C818C5600E83B17 /* Build configuration list for PBXNativeTarget "ZXOrderListViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -829,6 +914,7 @@
 				F02630DB1C818C5600E83B17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

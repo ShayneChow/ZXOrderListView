@@ -11,6 +11,7 @@
 #import "ZXOrderModel.h"
 #import "MJExtension.h"
 #import "MJRefresh.h"
+#import "ZXOrderDetailController.h"
 
 #define kSegmented_Left 20
 #define kSegmented_Top 64+5
@@ -135,6 +136,8 @@ static NSString * const OrderCell = @"ZXOrderCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [_listView deselectRowAtIndexPath:indexPath animated:NO];
+    ZXOrderDetailController *orderDetailVC = [[ZXOrderDetailController alloc] init];
+    [self.navigationController pushViewController:orderDetailVC animated:YES];
 }
 
 #pragma mark - Segment M
