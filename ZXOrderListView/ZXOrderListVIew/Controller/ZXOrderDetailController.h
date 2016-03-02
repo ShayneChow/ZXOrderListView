@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZXOrderListViewController.h"
 
-@interface ZXOrderDetailController : UITableViewController
+@interface ZXOrderDetailController : ZXOrderListViewController
+
 
 @end

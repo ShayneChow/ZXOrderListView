@@ -37,7 +37,7 @@
     self = [super init];
     if (!self)
         return nil;
-    
+    //self.style = UITableViewCellStyleValue1;
     self.title = title;
     self.value = value;
     self.placeholder = placeholder;

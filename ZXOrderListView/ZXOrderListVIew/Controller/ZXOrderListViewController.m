@@ -22,9 +22,7 @@
 
 @interface ZXOrderListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UISegmentedControl *segmented;
-@property (nonatomic, strong) UITableView *listView;
-@property (nonatomic, assign) NSInteger number;
+
 @property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end

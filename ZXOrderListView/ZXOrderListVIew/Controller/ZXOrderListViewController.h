@@ -10,4 +10,8 @@
 
 @interface ZXOrderListViewController : UIViewController
 
+@property (nonatomic, strong) UISegmentedControl *segmented;
+@property (nonatomic, strong) UITableView *listView;
+@property (nonatomic, assign) NSInteger number;
+
 @end
